@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quintessential&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* css VAriables */
+
+:root {
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1.4rem;
+    --font-size-lg: 2rem;
+    --font-size-xl: 2.5rem;
+    --color-2: #212421;
+    --color-1-lightest: hsla(35, 87%, 96%, 1);
+    --color-1-lighter: rgb(255, 193, 107);
+    --color-1-light: rgb(241, 164, 57);
+}
+
+html {
+    /* Adjust this value based on your header height */
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    background: var(--color-2) !important;
+    color: var(--color-1-lightest) !important;
+    overflow-x: hidden;
+}
+
+/* nav Styles */
+nav {
+    position: relative;
+    top: 0px;
+    animation: bottom 1s 1 forwards;
+}
+
+@keyframes bottom {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 0px;
+        opacity: 1;
+    }
+}
+
+.res-menu{
+    display: none;
+}
+
+.nav-brand{
+    font-size: 23px!important;
+}
+
+nav ul{
+    list-style: none;
+}
+nav a {
+    text-decoration: none;
+    color: var(--color-1-light)!important;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--color-1-lightest) !important;
+}
+
+nav a::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -2.5px;
+    width: 0;
+    background-color: var(--color-1-light);
+    height: 2px;
+    transition: width 0.5s linear;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Home PAge */
+
+#home {
+    color: var(--color-1-lightest) !important;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 100px;
+    height: 100vh;
+}
+@media only screen and (max-width:600px){
+    #home{
+        padding: 0;
+        height: unset;
+    }
+    .skill-set>div{
+        width: 150px;
+    }
+}
+#name{
+    position: relative;
+}
+.icon a, .icon a:hover{
+    color: unset;
+}
+.icon {
+    font-size: 28px;
+}
+#name::after{
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -2.5px;
+    width: 0;
+    background-color: var(--color-1-light);
+    height: 2px;
+    transition: width 0.5s linear;
+}
+
+#name:hover::after {
+    width: 100%;
+}
+
+header h5 {
+    font-size: var(--font-size-md);
+    position: relative;
+    right: 200px;
+    animation: right 1.5s 1 forwards;
+}
+
+@keyframes right {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        right: 0px;
+        opacity: 1;
+    }
+}
+
+header h2 {
+    font-size: var(--font-size-xl);
+    position: relative;
+    left: 200px;
+    animation: left 1.5s 1 forwards;
+}
+
+@keyframes left {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        left: 0px;
+        opacity: 1;
+    }
+}
+
+header h2>span {
+    color: transparent;
+    background-clip: text;
+    animation: blink 3s linear infinite forwards;
+}
+
+button:hover {
+    background-color: var(--color-1-lighter) !important;
+    border: 0 !important;
+    color: var(--color-1-lightest) !important;
+    transition: background-color 0.5s linear;
+}
+
+#home {
+    scale: 1;
+    animation: exit linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
+    transition: .5s;
+}
+
+@keyframes exit {
+    to {
+        scale: .2;
+        opacity: 0;
+    }
+}
+
+
+
+/* About section */
+#about {
+    scroll-margin-bottom: 100px; 
+    position: relative;
+}
+
+@keyframes slow {
+    to {
+        scale: 1;
+        opacity: 0;
+    }
+}
+
+#about h3{
+    position: relative;
+    z-index: 999;
+    opacity: 0.8;
+    top: -25px;
+}
+
+#about h3,
+h4 {
+    font-size: var(--font-size-xl);
+
+}
+
+#about h3,
+h4:hover {
+    color: var(--color-1-lighter);
+
+}
+
+#about p {
+    font-size: var(--font-size-md);
+    line-height: 1.7;
+    position: relative;
+    z-index: 999;
+}
+
+.part-img {
+    height: 300px;
+    width: 400px;
+    opacity: 0.5;
+    position: absolute;
+    left: -300px;
+    top: 0;
+    z-index: 0;
+    animation: moveup 1s infinite ease-in-out;
+}
+
+@keyframes moveup {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-100px);
+    }
+}
+
+.head {
+    border-left: 1px solid grey;
+    scale: .3;
+    opacity: 0;
+    animation: slow linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    transition: .5s;
+}
+
+@keyframes slow {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.para {
+    scale: .3;
+    opacity: 0;
+    animation: slow linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    transition: animation 1s;
+}
+
+@keyframes slow {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.part-img1 {
+    height: 300px;
+    width: 400px;
+    opacity: 0.5;
+    position: absolute;
+    left: -300px;
+    top: 0;
+    z-index: 0;
+    animation: movedown 1s infinite ease-in-out;
+    transition: animation 1s;
+}
+
+@keyframes movedown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(100px);
+    }
+}
+.skills {
+    border-radius: 6px;
+    height: 130px;
+    width: 100px;
+    box-shadow: 1px 1px 10px 1px #3d413d;
+    padding: 20px;
+}
+
+.skills i{
+    font-size: 40px;
+}
+
+.skills:hover {
+    background-color: var(--color-1-light);
+    
+}
+
+/* Projects  */
+.projects h3 {
+    font-size: var(--font-size-xl);
+    color: var(--color-1-light);
+    position: relative;
+    z-index: 999;
+    opacity: 0.8;
+    top: -25px;
+}
+
+.projects h4:hover {
+    color: var(--color-1-lighter) !important;
+}
+
+.projects a {
+    text-decoration: none;
+    color: var(--color-1-lightest);
+}
+
+.projects {
+    border-left: 1px solid grey;
+    position: relative;
+    scale: .3;
+    opacity: 0;
+    animation: slow ease-in-out forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    transition: animation 6s;
+    margin: 100px;
+}
+
+@keyframes slow {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.point {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: -11px;
+    top: -10px;
+    background-color: grey;
+    border-radius: 50%;
+    z-index: 999;
+    animation: blink 4s linear infinite forwards;
+}
+
+@keyframes blink {
+    0% {}
+
+    50% {
+        background-color: var(--color-1-lighter);
+    }
+
+    100% {
+        background-color: none;
+    }
+}
+
+.project1:after {
+    content: "";
+    background-color: rgba(214, 167, 80, 0.792);
+    height: 50rem;
+    width: 50rem;
+    animation: zoom 2s 1 forwards linear;
+}
+
+
+/* Services */
+#services {
+    scroll-margin-top: 160px; 
+    border-left: 1px solid grey;
+    position: relative;
+    scale: .3;
+    opacity: 0;
+    animation: slow linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    transition: animation 1s;
+}
+
+@keyframes slow {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+#services i {
+    font-size: 30px;
+}
+
+#services>h3 {
+    font-size: var(--font-size-xl);
+    color: var(--color-1-light);
+    position: relative;
+    z-index: 999;
+    opacity: 0.8;
+    top: -25px;
+}
+
+
+#services i{
+    animation: blink-2 2s linear infinite forwards ;
+    transition: all 1s;
+}
+@keyframes blink-2{
+    0%{opacity: 1;}
+    50%{color: var(--color-1-lighter);}
+    100%{opacity: 1;}
+}
+
+
+/*#CONTACT */
+#contact>h3 ::after {
+    content: "";
+    height: 1px;
+    background-color: var(--color-1-lighter);
+    width: 100%;
+}
+
+#contact>h3:hover {
+    color: var(--color-1-lighter) !important;
+
+}
+
+#contact input {
+    background: transparent !important;
+    border: 0;
+    border-bottom: 1.4px solid grey;
+    color: var(--color-1-lightest) !important;
+    animation: input-width 2s linear 1 forwards;
+}
+
+@keyframes input-width {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+#contact input::placeholder {
+    color: var(--color-1-lightest) !important;
+    opacity: 0!important;
+}
+
+#contact textarea {
+    background: transparent !important;
+    border: 0;
+    border-bottom: 1.4px solid grey;
+    color: var(--color-1-lightest) !important;
+    animation: input-width 2s linear 1 forwards;
+    resize: none!important;
+}
+
+#contact textarea::placeholder {
+    color: var(--color-1-lightest) !important;
+}
+
+.btn1 {
+    padding: 10px;
+    color: aliceblue;
+    background-color: var(--color-2);
+    border: 1px solid grey;
+}
+
+/* foooter */
+footer {
+    height: 30vh;
+    text-align: center;
+    display: flex;
+    align-items: end;
+}
+
+.home-nav{
+    position: fixed;
+
+}
+footer a {
+    font-size: 20Rpx!important;
+    color: var(--color-1-lightest);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--color-1-lighter);
+}
+footer i{
+    position: fixed;
+    bottom: 100px;
+    right: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--color-1-light);
+    padding: 15px;
+}
+
+footer i:hover{
+    background-color: var(--color-1-light);
+    color: var(--color-1-lightest);
+}
+
+/* responsive  */
+
+@media only screen and (max-width:1000px) {
+    .profile {
+        display: none;
+    }
+
+    #about {
+        margin-top: -50px;
+    }
+}
+
+
+@media only screen and (max-width:700px) {
+
+    .res-menu{
+        display: block;
+        font-size: 30px;
+    }
+    .hamburger{
+        position: relative;
+        right: 0px;
+    }
+
+    .nav-contents{
+        display: none;
+        padding: 20px;
+        padding-left: 0px;
+        z-index: 1;
+        top: 50px;
+        left: 0%;
+    }
+
+    .nav-contents ul{
+        padding-left: 0;
+        flex-direction: column;
+    }
+    header h2 {
+        font-size: var(--font-size-lg);
+    }
+
+    header h5 {
+        font-size: var(--font-size-md);
+    }
+
+}
+
+
+@media only screen and (max-width:550px) {
+    #about {
+        margin-top: -50px;
+    }
+
+    .head p {
+        display: none;
+    }
+    
+    .skill-set{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    footer a{
+        font-size: var(--font-size-sm);
+    }
+
+}
+
